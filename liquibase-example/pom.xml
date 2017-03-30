@@ -39,14 +39,12 @@
             </activation>
             <properties>
                 <runtime.env>dev</runtime.env>
-                <swagger.api.source.host>127.0.0.1:10086</swagger.api.source.host>
             </properties>
         </profile>
         <profile>
             <id>dev-test</id>
             <properties>
                 <runtime.env>dev-test</runtime.env>
-                <swagger.api.source.host>open-dev.zwjk.com</swagger.api.source.host>
             </properties>
         </profile>
     </profiles>
