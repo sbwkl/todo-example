@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.ucmed.todo</groupId>
+    <artifactId>release-example</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+    <name>release-example</name>
+    <description>release-example</description>
+    <licenses>
+    </licenses>
+    <organization>
+        <name>ucmed</name>
+        <url>http://www.ucmed.cn</url>
+    </organization>
+    <modules>
+        <module>parent</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:git@github.com:sbwkl/todo-example.git</connection>
+        <developerConnection>scm:git:git@github.com:sbwkl/todo-example.git</developerConnection>
+      <tag>release-example-0.0.1</tag>
+  </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Releases Repository</name>
+            <url>
+                http://192.168.2.195:8081/nexus/content/repositories/release/
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshots Repository</name>
+            <url>
+                http://192.168.2.195:8081/nexus/content/repositories/snapshots/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
