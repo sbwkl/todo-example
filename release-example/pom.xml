@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.ucmed.todo</groupId>
     <artifactId>release-example</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>release-example</name>
     <description>release-example</description>
@@ -19,7 +19,7 @@
     <scm>
         <connection>scm:git:git@github.com:sbwkl/todo-example.git</connection>
         <developerConnection>scm:git:git@github.com:sbwkl/todo-example.git</developerConnection>
-      <tag>release-example-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <build>
