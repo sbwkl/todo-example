@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `me_message_entrance`;
 CREATE TABLE `me_message_entrance` (
   `me_message_entrance_id` varchar(40) NOT NULL COMMENT '主键',
   `me_message_entrance_parent_id` varchar(40) DEFAULT NULL COMMENT '父级入口记录主键',

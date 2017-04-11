@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `dynamic_func`;
 CREATE TABLE `dynamic_func` (
   `dynamic_func_id` varchar(40) NOT NULL COMMENT '主键',
   `dynamic_func_type` varchar(40) NOT NULL COMMENT '功能类型（如：动态首页，动态个人中心等）',

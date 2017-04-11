@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `mi_message_info`;
 CREATE TABLE `mi_message_info` (
   `mi_message_info_id` varchar(40) NOT NULL COMMENT '主键',
   `title` varchar(100) DEFAULT NULL COMMENT '消息标题',

@@ -1,9 +1,21 @@
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
 
+    <changeSet id="1.1.6" author="zhang">
+        <tagDatabase tag="1.1.6"/>
+    </changeSet>
     <changeSet id="1.1.6-1" author="zhang">
-      <sqlFile encoding="UTF-8" relativeToChangelogFile="true" path="001_table_dynamic_func_create.sql" />
-	</changeSet>
+        <sqlFile encoding="UTF-8" relativeToChangelogFile="true" path="001_table_dynamic_func_create.sql"/>
+        <rollback>
+            DROP TABLE IF EXISTS `dynamic_func`;
+        </rollback>
+    </changeSet>
     <changeSet id="1.1.6-2" author="li">
-      <sqlFile encoding="UTF-8" relativeToChangelogFile="true" path="008_table_user_push_create.sql" />
-	</changeSet>
+        <sqlFile encoding="UTF-8" relativeToChangelogFile="true" path="008_table_user_push_create.sql"/>
+        <rollback>
+            DROP TABLE IF EXISTS `user_push`;
+        </rollback>
+    </changeSet>
 </databaseChangeLog>

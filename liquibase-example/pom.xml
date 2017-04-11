@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.ucmed</groupId>
-    <artifactId>db-maintain</artifactId>
+    <artifactId>liquibase-example</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>liquibase-example</name>

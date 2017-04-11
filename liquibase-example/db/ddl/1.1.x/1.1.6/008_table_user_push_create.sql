@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS `user_push`;
- CREATE TABLE `user_push` (
+CREATE TABLE `user_push` (
   `user_push_id` varchar(40) NOT NULL,
   `scy_user_id` varchar(40) DEFAULT NULL,
   `push_id` varchar(40) DEFAULT NULL,
