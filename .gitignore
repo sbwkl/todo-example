@@ -229,3 +229,9 @@ pip-log.txt
 
 target/
 *.war
+
+#################
+## jupyter
+#################
+
+.ipynb_checkpoints/
