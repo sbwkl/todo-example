@@ -1,7 +1,0 @@
-docker pull jdeathe/centos-ssh
-
-docker run -d \
-  --name ssh.1 \
-  -p 2020:22 \
-  --env "SSH_SUDO=ALL=(ALL) NOPASSWD:ALL" \
-  jdeathe/centos-ssh
