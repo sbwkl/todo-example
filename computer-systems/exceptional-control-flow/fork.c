@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "myfork.h"
+#include "csapp.h"
 
 int main() {
   pid_t pid;

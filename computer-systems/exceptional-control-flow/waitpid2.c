@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "myfork.h"
 #include "csapp.h"
 #define N 2
 
