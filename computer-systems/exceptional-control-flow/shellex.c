@@ -59,6 +59,8 @@ void eval(char *cmdline) {
     } else {
       printf("%d %s", pid, cmdline);
     }
+  } else {
+    printf("%s : Not support builtin cmd\n", argv[0]);
   }
   return;
 }
