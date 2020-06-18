@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cfile="$1"
+filename="${cfile%.*}"
+
+if [ ! -d "target" ]; then
+  mkdir target
+fi
+
+gcc -o target/${filename} ${cfile} -I../libs ../libs/libcsapp.so -pthread
