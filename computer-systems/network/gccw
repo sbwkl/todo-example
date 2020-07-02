@@ -7,4 +7,4 @@ if [ ! -d "target" ]; then
   mkdir target
 fi
 
-gcc -o target/${filename} ${cfile} -I../libs ../libs/libcsapp.so -pthread
+gcc -o target/${filename} $@ -I../libs ../libs/libcsapp.so -pthread
