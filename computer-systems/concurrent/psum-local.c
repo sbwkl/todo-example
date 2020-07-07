@@ -5,11 +5,11 @@
 
 void *sum_local(void *vargp);
 
-long gsum[MAXTHREADS];
+long psum[MAXTHREADS];
 long nelems_per_thread;
 
 int main(int argc, char **argv) {
-  long i, nelems, log_nelems, nthreads, myid[MAXTHREADS];
+  long i, nelems, log_nelems, nthreads, myid[MAXTHREADS], result = 0;
   pthread_t tid[MAXTHREADS];
   struct timeval stop, start;
 
@@ -31,12 +31,11 @@ int main(int argc, char **argv) {
     Pthread_join(tid[i], NULL);
   }
 
-  long tsum = 0;
   for (i = 0; i < nthreads; i++) {
-    tsum += gsum[i];
+    result += psum[i];
   }
-  if (tsum != (nelems * (nelems - 1)) / 2) {
-    printf("Error: result = %ld\n", tsum);
+  if (result != (nelems * (nelems - 1)) / 2) {
+    printf("Error: result = %ld\n", result);
   }
   gettimeofday(&stop, NULL);
   long overhead = (stop.tv_sec - start.tv_sec) * 1000 + (stop.tv_usec - start.tv_usec) / 1000;
@@ -53,6 +52,6 @@ void *sum_local(void *vargp) {
   for (i = start; i < end; i++) {
     sum += i;
   }
-  gsum[myid] = sum;
+  psum[myid] = sum;
   return NULL;
 }
