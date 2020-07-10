@@ -1,0 +1,11 @@
+x + y = v (A, v)
+merge_sort(A)
+i = 1, j = A.length
+while i < j
+  if A[i] + A[j] = v
+    return i, j
+  elsif A[i] + A[j] < v
+    i++
+  elsif A[i] + A[j] > v
+    j--
+return NIL

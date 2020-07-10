@@ -1,0 +1,12 @@
+SELECTION(A)
+
+for j = 1 to A.lenght
+  min = i;
+  for i = j + 1 to A.length
+    if (A[j] > A[i]) {
+      min = i; 
+    }
+  // exchange j and min
+  key = A[j]
+  A[j] = A[min]
+  A[min] = key

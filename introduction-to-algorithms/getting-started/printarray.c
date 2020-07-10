@@ -1,0 +1,11 @@
+
+#include <stdio.h>
+
+void printarray(int *array, int size) {
+  int i;
+  for (i = 0; i < size; i++) {
+      printf("%d ", *array);
+      array++;
+  }
+  printf("\n");
+}

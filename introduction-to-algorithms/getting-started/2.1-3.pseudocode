@@ -1,0 +1,7 @@
+SEARCHING(A, v)
+
+for i to A.lenght
+  if A[i] = v
+    return i
+
+return NIL
