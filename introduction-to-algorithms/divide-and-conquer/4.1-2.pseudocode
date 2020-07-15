@@ -1,0 +1,12 @@
+FIND-MAXIMUM-SUBARRAY(A)
+
+sum = MIN_INT;
+set = (-1, -1)
+for i to A.length
+  for j = i + 1 to A.lenght
+    if sum < SUBARRAYSUM(A, i, j)
+      set = (i, j)
+return set
+
+SUBARRAYSUM(A, i, j)
+
