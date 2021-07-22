@@ -25,39 +25,31 @@ int main(int argc, char **argv) {
   }
 
   int *pl[16];
-  for (int i = 0; i <= n; i++) {
+  for (int i = 0; i < n; i++) {
     pl[i] = (int *) malloc(2 * sizeof(int));
     pipe(pl[i]);
   }
 
-  for (int i = 1; i <= n; i++) {
+  for (int i = 0; i < n; i++) {
     if (fork() == 0) {
       dup2(pl[i][0], STDIN_FILENO);
-      int j = (i + 1) % (n + 1);
-      dup2(pl[j][1], STDOUT_FILENO);
+      if (i + 1 < n) {
+        dup2(pl[i + 1][1], STDOUT_FILENO);
+      }
 
       for (int i = 0; i <= n; i++) {
         close(pl[i][0]);
         close(pl[i][1]);
       }
 
-      execve(cl[i - 1], NULL, NULL);
+      execve(cl[i], NULL, NULL);
     }
   }
-  // parent process remain pl[0][0] for read.
-  for (int i = 1; i <= n; i++) {
+  for (int i = 0; i < n; i++) {
     close(pl[i][0]);
     close(pl[i][1]);
   }
-  close(pl[0][1]);
-  char pbuff[1024];
-  int pn;
-  while((pn = read(pl[0][0], pbuff, sizeof(pbuff))) > 0) {
-    if (pbuff[pn - 1] == '\n') {
-      pbuff[pn - 1] = '\0';
-    }
-    printf("%s\n", pbuff);
-  }
+
   for (int i = 1; i <= n; i++) {
     wait(NULL);
   }
