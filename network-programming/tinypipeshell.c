@@ -8,15 +8,15 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv, char **envp) {
 
   char cmdstring[1024];
   int len = read(STDIN_FILENO, cmdstring, sizeof(cmdstring));
   cmdstring[len - 1] = '\0';
-  char *subcmd = strtok(cmdstring, "|");
 
   char *cl[16];
   int n = 0;
+  char *subcmd = strtok(cmdstring, "|");
   while (subcmd != NULL) {
     cl[n] = (char *) malloc(strlen(subcmd) * sizeof(char));
     strcpy(cl[n], subcmd);
@@ -37,12 +37,12 @@ int main(int argc, char **argv) {
         dup2(pl[i + 1][1], STDOUT_FILENO);
       }
 
-      for (int i = 0; i <= n; i++) {
+      for (int i = 0; i < n; i++) {
         close(pl[i][0]);
         close(pl[i][1]);
       }
 
-      execve(cl[i], NULL, NULL);
+      execve(cl[i], argv, envp);
     }
   }
   for (int i = 0; i < n; i++) {
@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
     close(pl[i][1]);
   }
 
-  for (int i = 1; i <= n; i++) {
+  for (int i = 0; i < n; i++) {
     wait(NULL);
   }
 }
